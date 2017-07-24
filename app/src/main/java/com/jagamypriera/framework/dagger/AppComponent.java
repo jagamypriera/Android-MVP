@@ -10,7 +10,7 @@ import dagger.Component;
 
 
 @Singleton
-@Component(modules = {AppModule.class, NetworkModule.class, RealmModule.class})
-public interface AppComponent<T> {
-    void makeAvailableTo(T object);
+@Component(modules = {NetworkModule.class, RealmModule.class})
+public interface AppComponent {
+    void makeAvailableTo(ComponentWrapper wrapper);
 }
