@@ -23,7 +23,7 @@ public class BasePresenter {
     public OkHttpClient okHttpClient;
     @Inject
     public HttpUrl httpUrl;
-    @Injectgti
+    @Inject
     public Retrofit retrofit;
     private ComponentWrapper wrapper;
 
