@@ -27,7 +27,7 @@ public class NetworkModule {
         this.context = context;
     }
 
-    @Provides
+    /*@Provides
     @Singleton
     HttpUrl provideHttpUrl() {
         return HttpUrl.parse(context.getString(R.string.base_url));
@@ -42,7 +42,7 @@ public class NetworkModule {
                 .addConverterFactory(JacksonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
-    }
+    }*/
 
    /* @Provides
     @Singleton
@@ -50,7 +50,7 @@ public class NetworkModule {
         return retrofit.create(ApiService.class);
     }*/
 
-    @Provides
+    /*@Provides
     @Singleton
     OkHttpClient provideOkHttpClient() {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
@@ -61,6 +61,6 @@ public class NetworkModule {
                 .writeTimeout(60, TimeUnit.SECONDS)
                 .readTimeout(60, TimeUnit.SECONDS)
                 .build();
-    }
+    }*/
 
 }

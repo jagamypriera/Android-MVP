@@ -19,12 +19,6 @@ import retrofit2.Retrofit;
  */
 
 public class BasePresenter {
-    @Inject
-    public OkHttpClient okHttpClient;
-    @Inject
-    public HttpUrl httpUrl;
-    @Inject
-    public Retrofit retrofit;
     private ComponentWrapper wrapper;
 
     public BasePresenter(Context context) {
@@ -35,17 +29,5 @@ public class BasePresenter {
 
     public Realm getRealm() {
         return wrapper.realm;
-    }
-
-    public OkHttpClient getOkHttpClient() {
-        return wrapper.okHttpClient;
-    }
-
-    public HttpUrl getHttpUrl() {
-        return wrapper.httpUrl;
-    }
-
-    public Retrofit getRetrofit() {
-        return wrapper.retrofit;
     }
 }
