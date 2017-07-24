@@ -82,20 +82,19 @@ public class AsdfBaseActivity extends AppCompatActivity implements AsdfBaseActiv
     }
 
     @Override
-    public void setupToolbarWithTitle(Toolbar mToolbar, TextView textView, String title) {
+    public void setupToolbarWithTitle(Toolbar toolbar, TextView textView, String title) {
         if (toolbar == null) return;
-        print("toolbar textview is null "+(textView==null)+" toolbar is null "+(mToolbar==null));
-        this.toolbar = mToolbar;
+        this.toolbar = toolbar;
         this.toolbarTitle = textView;
-        //mToolbar.setNavigationIcon(R.drawable.ic_back);
-        mToolbar.setTitle("");
-        setSupportActionBar(mToolbar);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
         actionBar.setTitle("");
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(true);
         this.toolbarTitle.setText(title);
+        //mToolbar.setNavigationIcon(R.drawable.ic_back);
     }
 
     @Override
