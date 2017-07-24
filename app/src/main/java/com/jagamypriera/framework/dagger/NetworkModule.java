@@ -1,6 +1,7 @@
 package com.jagamypriera.framework.dagger;
 
 import android.content.Context;
+import android.support.annotation.RestrictTo;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
@@ -15,9 +16,12 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
+import static android.support.annotation.RestrictTo.Scope.LIBRARY_GROUP;
+
 /**
  * Created by Taufik Akbar on 19/12/2016.
  */
+@RestrictTo({LIBRARY_GROUP})
 @Module
 public class NetworkModule {
     private Context context;
@@ -25,13 +29,6 @@ public class NetworkModule {
     public NetworkModule(Context context) {
         this.context = context;
     }
-
-    /*@Provides
-    @Singleton
-    HttpUrl provideHttpUrl() {
-        return HttpUrl.parse(context.getString(R.string.base_url));
-    }
-*/
     @Provides
     @Singleton
     Retrofit provideRetrofit(OkHttpClient okHttpClient) {
@@ -42,13 +39,6 @@ public class NetworkModule {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
     }
-
-   /* @Provides
-    @Singleton
-    ApiService provideApiService(Retrofit retrofit) {
-        return retrofit.create(ApiService.class);
-    }*/
-
     @Provides
     @Singleton
     OkHttpClient provideOkHttpClient() {
