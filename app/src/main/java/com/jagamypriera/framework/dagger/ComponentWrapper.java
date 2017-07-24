@@ -1,8 +1,13 @@
 package com.jagamypriera.framework.dagger;
 
+import com.jagamypriera.framework.apis.ApiService;
+
 import javax.inject.Inject;
 
 import io.realm.Realm;
+import okhttp3.HttpUrl;
+import okhttp3.OkHttpClient;
+import retrofit2.Retrofit;
 
 /**
  * Created by jagamypriera on 24/07/17.
@@ -10,4 +15,6 @@ import io.realm.Realm;
 
 public class ComponentWrapper {
     @Inject public Realm realm;
+    @Inject public OkHttpClient okHttpClient;
+    @Inject public Retrofit retrofit;
 }

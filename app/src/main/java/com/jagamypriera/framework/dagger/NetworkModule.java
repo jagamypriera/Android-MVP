@@ -1,7 +1,7 @@
 package com.jagamypriera.framework.dagger;
+
 import android.content.Context;
 
-import com.jagamypriera.framework.R;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.util.concurrent.TimeUnit;
@@ -10,7 +10,6 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -32,17 +31,16 @@ public class NetworkModule {
     HttpUrl provideHttpUrl() {
         return HttpUrl.parse(context.getString(R.string.base_url));
     }
-
+*/
     @Provides
     @Singleton
-    Retrofit provideRetrofit(HttpUrl httpUrl, OkHttpClient okHttpClient) {
+    Retrofit provideRetrofit(OkHttpClient okHttpClient) {
         return new Retrofit.Builder()
-                .baseUrl(String.valueOf(httpUrl))
                 .client(okHttpClient)
                 .addConverterFactory(JacksonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
-    }*/
+    }
 
    /* @Provides
     @Singleton
@@ -50,7 +48,7 @@ public class NetworkModule {
         return retrofit.create(ApiService.class);
     }*/
 
-    /*@Provides
+    @Provides
     @Singleton
     OkHttpClient provideOkHttpClient() {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
@@ -61,6 +59,6 @@ public class NetworkModule {
                 .writeTimeout(60, TimeUnit.SECONDS)
                 .readTimeout(60, TimeUnit.SECONDS)
                 .build();
-    }*/
+    }
 
 }

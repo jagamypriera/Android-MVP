@@ -30,4 +30,12 @@ public class BasePresenter {
     public Realm getRealm() {
         return wrapper.realm;
     }
+
+    public OkHttpClient getOkHttpClient() {
+        return wrapper.okHttpClient;
+    }
+
+    public Retrofit getRetrofit() {
+        return wrapper.retrofit;
+    }
 }
