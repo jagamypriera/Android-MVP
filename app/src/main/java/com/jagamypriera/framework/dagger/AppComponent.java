@@ -1,7 +1,5 @@
 package com.jagamypriera.framework.dagger;
 
-import com.jagamypriera.framework.App;
-
 import javax.inject.Singleton;
 
 import dagger.Component;
@@ -13,5 +11,6 @@ import dagger.Component;
 
 @Singleton
 @Component(modules = {AppModule.class, NetworkModule.class, RealmModule.class})
-public interface AppComponent {
+public interface AppComponent<T> {
+    void makeAvailableTo(T object);
 }
