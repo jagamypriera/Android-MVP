@@ -83,7 +83,6 @@ public class AsdfBaseActivity extends AppCompatActivity implements AsdfBaseActiv
 
     @Override
     public void setupToolbarWithTitle(Toolbar toolbar, TextView textView, String title) {
-        if (toolbar == null) return;
         this.toolbar = toolbar;
         this.toolbarTitle = textView;
         toolbar.setTitle("");
